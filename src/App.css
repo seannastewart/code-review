@@ -1,38 +1,354 @@
+html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,footer,header,nav,section{display:block}h1{font-size:2em;margin:.67em 0}figcaption,figure,main{display:block}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent;-webkit-text-decoration-skip:objects}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}dfn{font-style:italic}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}audio,video{display:inline-block}audio:not([controls]){display:none;height:0}img{border-style:none}svg:not(:root){overflow:hidden}button,input,optgroup,select,textarea{font-family:sans-serif;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}button,html [type=button],[type=reset],[type=submit]{-webkit-appearance:button}button::-moz-focus-inner,[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner{border-style:none;padding:0}button:-moz-focusring,[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{display:inline-block;vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details,menu{display:block}summary{display:list-item}canvas{display:inline-block}template{display:none}[hidden]{display:none}
+
+.clearfix:after {visibility: hidden; display: block; font-size: 0; content: ''; clear: both; height: 0; }
+
+html { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}
+
+*, *:before, *:after {box-sizing: inherit}
+
+.sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; border: 0; padding: 0; white-space: nowrap; clip-path: inset(100%); clip: rect(0 0 0 0); overflow: hidden;}
+
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;600&display=swap');
+
+
+.wrapper {
+    max-width: 1260px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+body {
+    background-color: #2a2a36;
+    font-family: 'Rajdhani', sans-serif;
+  
+}
+
+
 .App {
-  text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+header { 
+    text-align: center;
+    color: #FEF9EF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:0;
+ 
+   
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+button {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: bold;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+h1 {
+    font-size:60px;
+    margin: 0;
+    letter-spacing: 20px;
+    text-shadow:4px 2px teal;
 }
 
-.App-link {
-  color: #61dafb;
+
+
+
+input[type="radio"] { 
+    opacity: 0;
+    position: absolute;
+ 
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.categories p {
+    text-align: center;
+    font-size: 25px;
+     color: #FEF9EF;
+}
+
+.categories form {
+    margin-bottom: 3%;
+}
+
+.categories fieldset {
+    display: flex;
+    flex-wrap: wrap;
+    border:none;
+    justify-content: space-between;
+ 
+}
+
+.categories label {
+    margin: 1% 1%;
+    background-color: #0f8787;
+    padding: 2%;
+    width: 18%;
+    color: #FEF9EF;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 50px;
+    border: 3px solid #FEF9EF ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height:70px;
+    font-size: 20px;
+    font-weight: bold;
+    transition: 0.1s ease-in;
+    
+}
+
+.categories input[type="radio"]:checked + label,
+label:hover,
+ .resultContainer button:hover {
+background-color: #474964;
+transform: scale(105%);
+
+}
+
+.categories button {
+    margin: 2%;
+    background-color: #0f8787;
+    border: 3px solid #FEF9EF ;
+    padding: 10px 10px;
+    border-radius: 50px;
+    width: 20%;
+    text-align: center;
+    cursor: pointer;
+    font-size: 30px;
+    color: #FEF9EF;
+    transition: 0.1s ease-in;
+}
+
+.categories button:hover {
+    transform: scale(105%);
+}
+
+.questions {
+    margin: 4% 0;
+}
+
+.questionContainer {
+    text-align: center;
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+     
+}
+
+.questionContainer fieldset {
+    border-radius: 30px;
+    padding:5%;
+    width:80%;
+    position: relative;
+    background-color: #2a2a36;
+    color: #FEF9EF;
+    border:3px solid white;
+}
+
+.questionContainer label {
+    margin: 2%;
+    background-color:#0f8787;
+    color: #FEF9EF;
+    padding: 10px 10px;
+    width: 29%;
+    text-align: center;
+    cursor: pointer;
+    font-size: 30px;
+    border-radius: 20px;
+    width: 200px;
+    transition: 0.1s ease-in;
+}
+
+.questionContainer p {
+    margin-bottom: 5%;
+    font-size: 30px;
+   
+}
+
+.scoreContainer h2 {
+    color: #FEF9EF;
+}
+
+.buttonContainer {
+    width:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.quit {
+    position:absolute;
+    left:10px;
+    top:5px;
+    border:none;
+    background-color: #2a2a36;
+    cursor:pointer;
+    font-size: 30px;
+    color:#FEF9EF;
+    padding: 0;
+}
+
+.quit:hover {
+    color: #0f8787;
+    
+}
+
+.results {
+    display: flex;  
+    justify-content: center;
+    margin-top: 8%;
+    
+}
+.resultContainer {
+    background-color: #2a2a36;
+    color: #FEF9EF;
+    border:3px solid #FEF9EF;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    padding: 5%;
+    margin-bottom: 10%;
+}
+
+.resultContainer p {
+    font-size:30px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.resultContainer button {
+     margin: 2%;
+    background-color: #0f8787;
+    padding: 10px 10px;
+    color: #FEF9EF;
+    border-radius: 15px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 20px;
+    border:none;
+}
+
+footer {
+    position: fixed;
+    bottom:0;
+    text-align: center;
+    width: 100%;
+    background-color: #0f8787;
+    color: #FEF9EF;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+footer p {
+    margin: 4px;
+}
+
+footer a {
+    text-decoration: none;
+    color: #FEF9EF;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+
+
+@media (max-width: 1000px) {
+
+    .categories label {
+        font-size: 18px;
+
+    }
+    .resultContainer {
+        width: 80%;
+    }
+
+}
+
+
+@media (max-width: 800px) {
+
+    h1 {
+        letter-spacing:10px;
+    }
+
+    .categories label {
+    width: 29%;
+    height: 50px;
+    margin: 2% 1%;
+
+    }
+
+    .categories button {
+        font-size:25px;
+        width:40%;
+    }
+    .questionContainer label {
+        width: 40%;
+    }
+
+    .questionContainer fieldset,
+    .resultContainer {
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 50px;
+    }
+    .categories p {
+        font-size:20px;
+    }
+    .categories {
+        margin-bottom: 55px;
+    }
+
+    .questionContainer p,
+    .questionContainer label,
+    .quit {
+        font-size:25px;
+    }
+
+  
+     
+}
+
+@media (max-width: 500px) {
+    h1 {
+        margin: 5% 2%;
+        letter-spacing:0;
+    }
+    .categories label {
+         width: 48%;
+
+    }
+
+    .categories p {
+        font-size:20px;
+        margin: 0 0 3% 0;
+    }
+
+    .resultContainer p {
+        font-size:25px;
+    }
+
+    
+
+    
+   
+
 }
